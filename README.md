@@ -6,6 +6,7 @@
 2. Setting `DB_CONNECTION` in `.env`
 3. Execute script SQL
 4. run `go run all` to run application
+5. user: `admin@admin.com`, password: `password`
 
 
 ## Doc API
