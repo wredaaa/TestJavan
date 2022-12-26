@@ -36,4 +36,9 @@ func main() {
 func RegistertRoutes(router *mux.Router) {
 	// Auth
 	router.HandleFunc("/api/login", controllers.Login).Methods("POST")
+
+	// Family
+	router.HandleFunc("/api/family", controllers.IsAuthorized(controllers.CreateFamily)).Methods("POST")
+	router.HandleFunc("/api/family/{id}", controllers.IsAuthorized(controllers.UpdateFamily)).Methods("PUT")
+	router.HandleFunc("/api/family/{id}", controllers.IsAuthorized(controllers.DeleteFamily)).Methods("DELETE")
 }
