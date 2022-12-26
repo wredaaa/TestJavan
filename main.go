@@ -41,4 +41,10 @@ func RegistertRoutes(router *mux.Router) {
 	router.HandleFunc("/api/family", controllers.IsAuthorized(controllers.CreateFamily)).Methods("POST")
 	router.HandleFunc("/api/family/{id}", controllers.IsAuthorized(controllers.UpdateFamily)).Methods("PUT")
 	router.HandleFunc("/api/family/{id}", controllers.IsAuthorized(controllers.DeleteFamily)).Methods("DELETE")
+
+	// Asset
+	router.HandleFunc("/api/asset", controllers.IsAuthorized(controllers.GetAsset)).Methods("GET")
+	router.HandleFunc("/api/asset", controllers.IsAuthorized(controllers.CreateAsset)).Methods("POST")
+	router.HandleFunc("/api/asset/{id}", controllers.IsAuthorized(controllers.UpdateAsset)).Methods("PUT")
+	router.HandleFunc("/api/asset/{id}", controllers.IsAuthorized(controllers.DeleteAsset)).Methods("DELETE")
 }
